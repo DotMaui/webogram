@@ -4436,7 +4436,7 @@ angular.module('myApp.controllers', ['myApp.i18n'])
       })
     }
 
-    Storage.get('notify_nodesktop', 'send_ctrlenter', 'notify_volume', 'notify_novibrate', 'notify_nopreview', 'notify_nopush').then(function (settings) {
+    Storage.get('notify_nodesktop', 'send_ctrlenter', 'notify_volume', 'notify_novibrate', 'notify_nopreview', 'notify_nopush', 'enable_darkmode').then(function (settings) {
       $scope.notify.desktop = !settings[0]
       $scope.send.enter = settings[1] ? '' : '1'
 
@@ -4453,6 +4453,7 @@ angular.module('myApp.controllers', ['myApp.i18n'])
       $scope.notify.vibrate = !settings[3]
 
       $scope.notify.preview = !settings[4]
+      $scope.notify.darkmode = settings[6]
 
       $scope.notify.volumeOf4 = function () {
         return 1 + Math.ceil(($scope.notify.volume - 0.1) / 0.33)
@@ -4511,6 +4512,20 @@ angular.module('myApp.controllers', ['myApp.i18n'])
           Storage.remove('notify_nopreview')
         } else {
           Storage.set({notify_nopreview: true})
+        }
+        $rootScope.$broadcast('settings_changed')
+      }
+
+      $scope.toggleDarkMode = function () {
+        $scope.notify.darkmode = !$scope.notify.darkmode
+        var ele = document.querySelector("html");
+        if (!$scope.notify.darkmode) {
+          Storage.remove('enable_darkmode')
+          var reg = new RegExp('(\\s|^)'+"darkmode"+'(\\s|$)');
+          ele.className=ele.className.replace(reg,' ');
+        } else {
+          Storage.set({enable_darkmode: true})
+          ele.className += " "+"darkmode";
         }
         $rootScope.$broadcast('settings_changed')
       }

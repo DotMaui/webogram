@@ -64,7 +64,7 @@ function cancelEvent (event) {
 
 function hasOnclick (element) {
   if (element.onclick ||
-    element.getAttribute('ng-click')) {
+      element.getAttribute('ng-click')) {
     return true
   }
   var events = $._data(element, 'events')
@@ -183,8 +183,8 @@ function getRichValueWithCaret (field) {
   if (sel && sel.rangeCount) {
     var range = sel.getRangeAt(0)
     if (range.startContainer &&
-      range.startContainer == range.endContainer &&
-      range.startOffset == range.endOffset) {
+        range.startContainer == range.endContainer &&
+        range.startOffset == range.endOffset) {
       selNode = range.startContainer
       selOffset = range.startOffset
     }
@@ -251,9 +251,9 @@ function getRichElementValue (node, lines, line, selNode, selOffset) {
 function setRichFocus (field, selectNode, noCollapse) {
   field.focus()
   if (selectNode &&
-    selectNode.parentNode == field &&
-    !selectNode.nextSibling &&
-    !noCollapse) {
+      selectNode.parentNode == field &&
+      !selectNode.nextSibling &&
+      !noCollapse) {
     field.removeChild(selectNode)
     selectNode = null
   }
@@ -284,10 +284,10 @@ function setRichFocus (field, selectNode, noCollapse) {
 
 function getSelectedText () {
   var sel = (
-  window.getSelection && window.getSelection() ||
-  document.getSelection && document.getSelection() ||
-  document.selection && document.selection.createRange().text || ''
-    ).toString().replace(/^\s+|\s+$/g, '')
+      window.getSelection && window.getSelection() ||
+      document.getSelection && document.getSelection() ||
+      document.selection && document.selection.createRange().text || ''
+  ).toString().replace(/^\s+|\s+$/g, '')
 
   return sel
 }
@@ -309,7 +309,7 @@ function scrollToNode (scrollable, node, scroller) {
 }
 
 if (Config.Modes.animations &&
-  typeof window.requestAnimationFrame == 'function') {
+    typeof window.requestAnimationFrame == 'function') {
   window.onAnimationFrameCallback = function (cb) {
     return (function () {
       window.requestAnimationFrame(cb)
@@ -466,7 +466,7 @@ function versionCompare (ver1, ver2) {
 
 (function (global) {
   var badCharsRe = /[`~!@#$%^&*()\-_=+\[\]\\|{}'";:\/?.>,<\s]+/g,
-    trimRe = /^\s+|\s$/g
+      trimRe = /^\s+|\s$/g
 
   function createIndex () {
     return {
@@ -511,7 +511,7 @@ function versionCompare (ver1, ver2) {
 
     angular.forEach(searchText.split(' '), function (searchWord) {
       var len = Math.min(searchWord.length, 3),
-        wordPart, i
+          wordPart, i
       for (i = 1; i <= len; i++) {
         wordPart = searchWord.substr(0, i)
         if (shortIndexes[wordPart] === undefined) {
@@ -531,7 +531,7 @@ function versionCompare (ver1, ver2) {
 
     var queryWords = query.split(' ')
     var foundObjs = false,
-      newFoundObjs, i
+        newFoundObjs, i
     var j, searchText
     var found
 
@@ -573,3 +573,11 @@ function versionCompare (ver1, ver2) {
     search: search
   }
 })(window)
+
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.localStorage.enable_darkmode) {
+    var ele = document.querySelector("html");
+    ele.className += " "+"darkmode";
+  }
+}, false);

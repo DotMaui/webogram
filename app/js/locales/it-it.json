@@ -65,6 +65,7 @@
     "settings_modal_notifications": "Notifiche desktop",
     "settings_modal_pushes": "Notifiche in background",
     "settings_modal_message_preview": "Anteprima messaggio",
+    "settings_modal_dark_theme": "Tema scuro",
     "settings_modal_sound": "Suono",
     "settings_modal_enter_send_description_md": "**Invio** - invia messaggio, **Shift + Invio** - a capo",
     "settings_modal_ctrl_enter_send_description_md": "**Ctrl + Invio** - invia messaggio, **Invio** - a capo",

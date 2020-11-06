@@ -65,6 +65,7 @@
     "settings_modal_notifications": "Уведомления на рабочем столе",
     "settings_modal_pushes": "Фоновые уведомления",
     "settings_modal_message_preview": "Предпросмотр сообщений",
+    "settings_modal_dark_theme": "Tema sombrio",
     "settings_modal_sound": "Звук",
     "settings_modal_enter_send_description_md": "**Enter** — отправить сообщение, **Shift + Enter** — новая строка",
     "settings_modal_ctrl_enter_send_description_md": "**Ctrl + Enter** — отправить сообщение, **Enter** — новая строка",
