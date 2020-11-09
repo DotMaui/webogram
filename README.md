@@ -1,3 +1,15 @@
+This fork of [zhukov/webogram](https://github.com/zhukov/webogram) adds the dark theme to the web version of Telegram.
+
+You can set the dark theme from the settings.
+
+![Sample screenshot 1](/app/img/screenshot_dark_theme3.png)
+![Mobile screenshot 2](/app/img/screenshot_dark_theme4.png)
+
+You can try it here:
+https://web.dotgram.me/
+
+
+
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## [Webogram](https://web.telegram.org) — Telegram Web App
