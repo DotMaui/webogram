@@ -433,9 +433,17 @@ html.darkmode {
     background-color: #182533;
     border-radius: 8px;
     width: fit-content;
+    max-width: 100%;
+    padding: 10px 8px;
 
-    &:not(.im_message_body_media) {
+    /*&:not(.im_message_body_media) {
       padding: 10px 8px;
+    }*/
+
+    .im_message_author,
+    .im_message_fwd_author,
+    a {
+      color: #51abf1;
     }
 
     pre {
